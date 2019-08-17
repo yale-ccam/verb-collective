@@ -1,17 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class toCount : Verb
+public class toRise : Verb
 {
     public float rate = 1.0f;
-	public float targetNumber = 5.0f;
-
-	[SerializeField]
-	private float currentNumber = 0.0f;
-	
+	public float maxHeight = 20.0f;
 	public Verb[] triggeredVerbs;
 
+	private Rigidbody rb;
 
 	void Awake () 
 	{
@@ -20,6 +17,9 @@ public class toCount : Verb
 
     private void Start()
     {
+    	rb = GetComponent<Rigidbody>();
+    	rb.isKinematic = true;
+
         if (isActive)
             PlayAudio();
     }
@@ -27,18 +27,12 @@ public class toCount : Verb
     void FixedUpdate () {
 		if(isActive)
 		{
-			
-			currentNumber += rate;
+			rb.MovePosition(transform.position + (Vector3.up * rate * Time.fixedDeltaTime));
 
-			if(currentNumber >= targetNumber)
-				{
-				currentNumber = 0.0f;
+			if(transform.position.y >= maxHeight){
 				EndVerb();
                 Activate(triggeredVerbs);
-				}
-			else{
-				isActive = false;
-				}
+			}
 		}
 	}
 }
