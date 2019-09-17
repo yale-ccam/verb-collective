@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class whenPressed : Verb {
 
-	//triggers for the duration that the object is being touched
-	public string keyCode;
+    /*
+	* Triggers for the duration that the object is being touched
+    * User provides the key to be pressed
+    */
+
+    //______Variable Declarations_____________________
+    public string keyCode;
+    //________________________________________________
 	public Verb[] triggeredVerbs;
 
     private void Awake()
@@ -17,8 +23,7 @@ public class whenPressed : Verb {
 	{
         if (isActive)
         {
-
-
+            // Will stop triggered verbs if the button is no longer being pressed
             if (Input.GetKeyDown(keyCode))
             {
                 PlayAudio();

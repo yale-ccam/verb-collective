@@ -5,8 +5,16 @@ using UnityEngine;
 //[RequireComponent(typeof(Rigidbody))]
 public class toDescend : Verb {
 
-	public float rate = 1.0f;
+    /*
+     *  Object will move down on the y-axis at a variable speed to a minimum height. 
+     * The speed and height are the main variables for this verb. 
+     * The verb will end when the object reaches or falls below the minimum height.
+     */
+
+    //______Variable Declarations_____________________
+    public float rate = 1.0f;
 	public float minHeight = -20.0f;
+    //________________________________________________
 	public Verb[] triggeredVerbs;
 
     private Rigidbody rb;
@@ -22,12 +30,19 @@ public class toDescend : Verb {
             PlayAudio();
     }
 
-    // Update is called once per frame
+    //FixedUpdate is used when objects are given Rigidbody in Unity
+    // FixedUpdate is called once per frame
     void FixedUpdate () {
 		if(isActive)
 		{
-            //rb.MovePosition(transform.position - (Vector3.up * rate * Time.deltaTime));
-            transform.position -= Vector3.up * rate * Time.deltaTime;
+            /*Time.deltaTime converts speed from per frame to per time. Makes motion smooth.
+            *Object will update based off direction(Vector3.up) and speed(rate)
+            *Vector3.down is shorthand. You can replace up with right, left, or down to change direction.
+            ________________________________________________*/
+
+            //rb.MovePosition(transform.position + (Vector3.down * rate * Time.deltaTime));
+            transform.position += Vector3.down * rate * Time.deltaTime;
+            //________________________________________________
 
 			if(transform.position.y <= minHeight){
 
@@ -37,3 +52,4 @@ public class toDescend : Verb {
 		}
 	}
 }
+ 

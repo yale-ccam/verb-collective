@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class whenWatched : Trigger {
 
-    //triggers if within threshold degrees of the camera center
+    /*
+    * Triggers if within threshold degrees of the camera center.
+    * User can provide the threshold as well as gazeDuration.
+    */
+
+    //______Variable Declarations_____________________
     [Range(10, 90)]
     public float threshold = 10;
     //tell the code to measure from the object's starting point
-
     public float gazeDuration = 3.0f;
+    //________________________________________________
     public Verb[] triggeredVerbs;
 
     private float timePassed = 0.0f;

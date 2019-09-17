@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class toGrow : Verb {
 
-	public float growMultiplier = 2.0f;
+    /*
+     * The object will grow at a variable rate/multiplier for a duratinon of time.
+     * User sets the rate and duration.
+     * At the start of this activated verb Conjugate() is called to set the size of origin of object.
+     */
+
+    //______Variable Declarations_____________________
+    public float growMultiplier = 2.0f;
 	public float duration = 3.0f;
+    //________________________________________________
     public Verb[] triggeredVerbs;
 
 	private float timePassed;
@@ -27,6 +35,7 @@ public class toGrow : Verb {
     void Update () {
 		if(isActive)
 		{
+            //This will set the scale of the object to a given point between start and final scales
 			transform.localScale = Vector3.Lerp(StartScale, FinalScale, timePassed);
 			timePassed += Time.deltaTime / duration;
 
@@ -38,7 +47,12 @@ public class toGrow : Verb {
 		}
 	}
 
-	override public void Conjugate () {
+    //overrides the Conjugate() function in the Verb() class.
+    override public void Conjugate () {
+        /*
+         * Takes the private variables of StartScale and FinalScale and sets them both
+         * before any transforming occurs on the object.
+         */
 		StartScale = this.transform.localScale;
 		FinalScale = StartScale * growMultiplier;
 		timePassed = 0.0f;

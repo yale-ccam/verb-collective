@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class whenVisible : Verb {
 
-    //triggers if within threshold degrees of the camera center
+    /*
+    * Triggers if within threshold degrees of the camera center.
+    * User can provide a threshold
+    */
+
+    //______Variable Declarations_____________________
     public float threshold;
     //tell the code to measure from the object's starting point
+    //________________________________________________
     public Verb[] triggeredVerbs;
 
     private Transform cameraView;
