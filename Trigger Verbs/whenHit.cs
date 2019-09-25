@@ -6,6 +6,7 @@ public class whenHit : Verb {
 
    /*
    * Triggers when object collides with another object
+   * Requires a collider with the isTrigger property set to false
    */
 
     //______Variable Declarations_____________________

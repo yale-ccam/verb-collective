@@ -5,7 +5,7 @@ using UnityEngine;
 public class whenWatched : Trigger {
 
     /*
-    * Triggers if within threshold degrees of the camera center.
+    * Triggers after the object is visible/looked at for a specified duration 
     * User can provide the threshold as well as gazeDuration.
     */
 

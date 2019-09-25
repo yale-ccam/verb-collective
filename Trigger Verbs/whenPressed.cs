@@ -5,7 +5,8 @@ using UnityEngine;
 public class whenPressed : Verb {
 
     /*
-	* Triggers for the duration that the object is being touched
+	  * Triggers for the duration that a key is held down
+    * Deactivates when the key is no longer pressed 
     * User provides the key to be pressed
     */
 

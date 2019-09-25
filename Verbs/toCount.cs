@@ -6,6 +6,7 @@ public class toCount : Verb
 {
     /*
      * A simple verb that counts from a currentNumber value to a user provided targetNumber
+     * Useful when you want an event to happen after a certain number of user actions
      * User can also set the speed(rate) at which the count takes place.
      */
 
@@ -17,10 +18,10 @@ public class toCount : Verb
     //SerializeField is just making this private variable, below, visible in the Unity Editor.
 	[SerializeField]
 	private float currentNumber = 0.0f;
-	
+
 	public Verb[] triggeredVerbs;
 
-	void Awake () 
+	void Awake ()
 	{
 		SetAudio();
 	}

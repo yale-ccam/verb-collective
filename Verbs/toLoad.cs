@@ -7,6 +7,7 @@ public class toLoad : Verb {
 
     /*
      * This verb will load a new scene. Scene is provided by user.
+     * Be sure to include the scene in the build settings
      */
 
     //______Variable Declarations_____________________

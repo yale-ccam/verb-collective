@@ -7,7 +7,7 @@ public class toShrink : Verb {
     /*
      * The object will grow at a variable rate/multiplier for a duratinon of time.
      * User sets the rate and duration.
-     * At the start of this activated verb Conjugate() is called to set the size of origin of object.
+     * At the start of this activated verb Conjugate() is called to set the target size to shrink to
      */
 
     //______Variable Declarations_____________________

@@ -5,8 +5,9 @@ using UnityEngine;
 public class whenVisible : Verb {
 
     /*
-    * Triggers if within threshold degrees of the camera center.
-    * User can provide a threshold
+    * Triggers when the object is looked at
+    * User can provide a threshold for how central to the camera
+    * an object needs to be to be considered visible
     */
 
     //______Variable Declarations_____________________
@@ -50,5 +51,5 @@ public class whenVisible : Verb {
             }
         }
     }
-    
+
 }

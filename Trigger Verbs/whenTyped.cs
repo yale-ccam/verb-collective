@@ -5,7 +5,7 @@ using UnityEngine;
 public class whenTyped : Verb {
 
     /*
-	* Triggers for the duration that the object is being touched.
+	  * Triggers when the user presses a key 
     * User provides the key to be pressed
     */
 

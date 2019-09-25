@@ -5,7 +5,8 @@ using UnityEngine;
 public class toDisable : Verb
 {
     /*
-     * This verb will deactivate a target object. 
+     * This verb will deactivate a target object.
+     * Deactivated objects are still present in the scene but are invisible and inactive while deactivated
      */
 
     //______Variable Declarations_____________________
@@ -31,4 +32,3 @@ public class toDisable : Verb
         }
     }
 }
-

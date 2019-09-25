@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class toSequence : Verb
 {
-    /* 
-     * 
+    /*
+     * Instead of activating all triggeredVerbs will activate one at a time each time toSequence is Deactivated
+     * Will follow the order the verbs are added to the triggeredVerbs array unless randomize is checked
      */
 
     //______Variable Declarations_____________________
@@ -19,11 +20,11 @@ public class toSequence : Verb
 
 	[SerializeField]
 	private int numberOfSteps;
-	
+
 	public Verb[] triggeredVerbs;
 
 
-	void Awake () 
+	void Awake ()
 	{
 		SetAudio();
         //checks the verb toSequence() to check how many trigger verbs are currently in the list.
