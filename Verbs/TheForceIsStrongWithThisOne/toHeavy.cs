@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class toHeavy : Verb
 {
+  /*
+   *  Increases the mass on a rigdibody to make objects "heavier" in Unity's physics engine
+   * Requires a Rigidbody
+   */
+
     public float rate = 1.0f;
 	public Verb[] triggeredVerbs;
 
 	private Rigidbody rb;
 
-	void Awake () 
+	void Awake ()
 	{
 		SetAudio();
 	}
@@ -29,7 +34,7 @@ public class toHeavy : Verb
 			rb.mass *= rate;
 			EndVerb();
             Activate(triggeredVerbs);
-			
+
 		}
 	}
 }

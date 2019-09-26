@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class toShrink : Verb {
 
-	public float shrinkMultiplier = 0.7f;
+    /*
+     * The object will grow at a variable rate/multiplier for a duratinon of time.
+     * User sets the rate and duration.
+     * At the start of this activated verb Conjugate() is called to set the target size to shrink to
+     */
+
+    //______Variable Declarations_____________________
+    public float shrinkMultiplier = 0.7f;
 	public float duration = 3.0f;
+    //________________________________________________
     public Verb[] triggeredVerbs;
 
 	private float timePassed = 0.0f;
@@ -27,7 +35,8 @@ public class toShrink : Verb {
     void Update () {
 		if(isActive)
 		{
-			transform.localScale = Vector3.Lerp(StartScale, FinalScale, timePassed);
+            //This will set the scale of the object to a given point between start and final scales
+            transform.localScale = Vector3.Lerp(StartScale, FinalScale, timePassed);
 			timePassed += Time.deltaTime / duration;
 
 			if(timePassed >= 1.0f)
@@ -39,9 +48,14 @@ public class toShrink : Verb {
 		}
 	}
 
+    //overrides the Conjugate() function in the Verb() class.
 	override public void Conjugate()
 	{
-		StartScale = this.transform.localScale;
+        /*
+         * Takes the private variables of StartScale and FinalScale and sets them both
+         * before any transforming occurs on the object.
+         */
+        StartScale = this.transform.localScale;
 		FinalScale = StartScale * shrinkMultiplier;
         timePassed = 0.0f;
         PlayAudio();
