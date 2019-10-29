@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class Verb : MonoBehaviour {
 
+    [Tooltip("Drag an audio source here to play when triggered")]
 	public AudioClip verbSound;
-	public bool loopSound;
-	public bool isActive;
+    [Tooltip("Turn this on to have the audio loop")]
+    public bool loopSound;
+    [Tooltip("Turn this on to have the verb be active on start")]
+    public bool isActive;
 
 	[HideInInspector]
 	public AudioSource audioS;
 
 	public void SetAudio () {
-		
-		if(gameObject.GetComponent<AudioSource>() == null)
-		{
-			gameObject.AddComponent<AudioSource>();
-		}
+        
 
-		audioS = gameObject.GetComponent<AudioSource>();
-		audioS.clip = verbSound;
-		audioS.loop = loopSound;
-		/*if(isActive && !audioS.isPlaying){
-			audioS.Play();
-		}*/
+        if (gameObject.GetComponent<AudioSource>() == null)
+		{
+            gameObject.AddComponent<AudioSource>();
+
+        }
+
+        audioS = gameObject.GetComponent<AudioSource>();
+
+        if (verbSound != null)
+        {
+            audioS.clip = verbSound;
+            audioS.loop = loopSound;
+        }
 	}
 
 	public virtual void Conjugate(){
@@ -37,6 +43,7 @@ public class Verb : MonoBehaviour {
             audioS.clip = verbSound;
             audioS.loop = loopSound;
             audioS.Play();
+            Debug.Log("here");
         }
     }
 
@@ -44,6 +51,7 @@ public class Verb : MonoBehaviour {
     {
         if(audioS.clip == verbSound)
         {
+            Debug.Log("here2");
             audioS.Stop();
         }
     }
@@ -58,6 +66,13 @@ public class Verb : MonoBehaviour {
                 item.Conjugate();
             }
         }
+    }
+
+    public void Activate(Verb verbs)
+    {
+                verbs.isActive = true;
+                verbs.Conjugate();
+            
     }
 
     public void Deactivate(Verb[] verbs)
