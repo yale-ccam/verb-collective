@@ -1,6 +1,6 @@
 # Basic Documentation for Verb Collective v.98
 
-The Verb Collective is a toolkit designed to aid artists in exploring interactive media and to help non specialized instructors teach virtual and augmented reality.  It is designed to fit seamlessly into the interface of Unity, though it leverages some of the same structures of visual coding environments, it is intentionally designed without specialized interfaces. 
+> The Verb Collective is a toolkit designed to aid artists in exploring interactive media and to help non specialized instructors teach virtual and augmented reality.  It is designed to fit seamlessly into the interface of Unity, though it leverages some of the same structures of visual coding environments, it is intentionally designed without specialized interfaces. 
 
 Verbs are short scripts that have very targeted functions.  Verbs, when triggered, can trigger other verbs on the original gameobject or else trigger verbs on a separate gameobject. Trigger verbs are used to begin interaction chains (example: whenTyped is used to trigger an array of verbs when a character on the keyboard is pressed) while standard verbs are set to wait for a trigger or else activate on start.  All types of verbs can be used to trigger an array of verbs at the end of their sequence.
 
@@ -16,73 +16,73 @@ For a more in depth description of the core strategies that are possible please 
 
 ## Classes
 * Verb
-The base class of all Verbs. Functions and variables to control the audio, activation of verbs, and an exit to each verb. The user can select the audio and the activity option in the editor. 
+   * The base class of all Verbs. Functions and variables to control the audio, activation of verbs, and an exit to each verb. The user can select the audio and the activity option in the editor. 
 * Trigger
-Adds the override function Conjugate to the Verb class. 
+   * Adds the override function Conjugate to the Verb class. 
 
 ## Verbs
 Can be activated using a Trigger Verb or at the start of a scene. 
 * toApproach
- Object will approach a target position at a variable speed. The user can change target position and speed in the editor.
+   * Object will approach a target position at a variable speed. The user can change target position and speed in the editor.
 * toAscend
-Object ascend on the screen at a variable rate and to a maximum height. The user can change the rate and the maximum height in the editor.
+   * Object ascend on the screen at a variable rate and to a maximum height. The user can change the rate and the maximum height in the editor.
 * toAttach
-Object is set as a child to a target object. The user can select the target in the editor.
+   * Object is set as a child to a target object. The user can select the target in the editor.
 * toCount
-Object contains a simple counter.
+   * Object contains a simple counter.
 * toDescend
-Object descends on the screen at a variable rate and minimum height. The user can change the rate and the minimum height in the editor.
+   * Object descends on the screen at a variable rate and minimum height. The user can change the rate and the minimum height in the editor.
 * toDie
-Object will be destroyed. 
+   * Object will be destroyed. 
 * toDisable
-Target object will be set to inactive. The user can change the target in the editor.
+   * Target object will be set to inactive. The user can change the target in the editor.
 * toEnable
-Target object will be set to active. The user can change the target in the editor.
+   * Target object will be set to active. The user can change the target in the editor.
 * toFace
-Object will face a target object at a variable speed, either once or constantly. The user can change the speed at which the object faces the target object, the target object, and whether this is once or constant in the editor.
+   * Object will face a target object at a variable speed, either once or constantly. The user can change the speed at which the object faces the target object, the target object, and whether this is once or constant in the editor.
 * toGrow
-Object will grow at a variable multiplier for a duration of time. The user can change the multiplier and the duration of time in the editor. 
+   * Object will grow at a variable multiplier for a duration of time. The user can change the multiplier and the duration of time in the editor. 
 * toLoad
-A new scene will be loaded. The user can select the scene to be loaded in the editor.
+   * A new scene will be loaded. The user can select the scene to be loaded in the editor.
 * toOrbit
-Object will orbit a target object at a variable speed, duration of time and a variable axis.The user can change the speed, duration of time and the axis in the editor.
+   * Object will orbit a target object at a variable speed, duration of time and a variable axis.The user can change the speed, duration of time and the axis in the editor.
 * toReturn
-Object will return to its place of origin at a variable rate. The user can change the rate in the editor.
+   * Object will return to its place of origin at a variable rate. The user can change the rate in the editor.
 * toRotate
-Object will rotate on a variable axis and at a variable speed for a duration of time. The user can change the axis, speed and duration of time in the editor.
+   * Object will rotate on a variable axis and at a variable speed for a duration of time. The user can change the axis, speed and duration of time in the editor.
 * toShrink
-Object will shrink at a variable multiplier for a duration of time. The user can change the multiplier and the duration of time in the editor.
+   * Object will shrink at a variable multiplier for a duration of time. The user can change the multiplier and the duration of time in the editor.
 * toSpawn
-Object will spawn a target object in a variable location, with the option to destroy object. The user can select the target object and the location, as well as whether or not the object is destroyed.
+   * Object will spawn a target object in a variable location, with the option to destroy object. The user can select the target object and the location, as well as whether or not the object is destroyed.
 * toStop
-Object will be set to inactive. 
+   * Object will be set to inactive. 
 * toTeleport
-Object will teleport to a variable location with the option to return to a variable starting point. The user can change the target position and past position, as well as set if teleporting will be two-way in the editor.
+   * Object will teleport to a variable location with the option to return to a variable starting point. The user can change the target position and past position, as well as set if teleporting will be two-way in the editor.
 * toWait
-Object will be set to inactive for a duration of time. The user can change the duration of time in the editor. 
+   * Object will be set to inactive for a duration of time. The user can change the duration of time in the editor. 
 
 ## Trigger Verbs
 Will activate a Verb when scenario is met. 
 * whenHit
-Trigger will execute once object interacts with another collider object. 
+   * Trigger will execute once object interacts with another collider object. 
 * whenHeld
-Trigger will execute once an object is held. 
+   * Trigger will execute once an object is held. 
 * whenStill
-Trigger will execute once object remains still for a variable threshold. The user can set the threshold in the editor.
+   * Trigger will execute once object remains still for a variable threshold. The user can set the threshold in the editor.
 * whenTouched
-Trigger will execute when an object enters a collider space. 
+   * Trigger will execute when an object enters a collider space. 
 * whenTyped
-Trigger will execute when the user types a variable letter. The user can select the letter in the editor.
+   * Trigger will execute when the user types a variable letter. The user can select the letter in the editor.
 * whenAway
-Trigger will execute when Object passes a variable threshold distance from a variable location. The user can change the location and threshold in the editor.
+   * Trigger will execute when Object passes a variable threshold distance from a variable location. The user can change the location and threshold in the editor.
 * whenDistant
-Trigger will execute when Object passes a variable threshold distance from a target object. The user can change the target object and threshold in the editor.
+   * Trigger will execute when Object passes a variable threshold distance from a target object. The user can change the target object and threshold in the editor.
 * whenPressed
-Trigger will execute when the user presses down a variable letter. The user can select the letter in the editor.
+   * Trigger will execute when the user presses down a variable letter. The user can select the letter in the editor.
 * whenVisible
-Trigger will execute when the Object is in the field of view against a variable threshold. The user can change the threshold in the editor. 
+   * Trigger will execute when the Object is in the field of view against a variable threshold. The user can change the threshold in the editor. 
 * whenWatched
-Trigger will execute when the Object is in the center of the field of view against a threshold for a duration of gaze time. The user can change the duration of gaze and the threshold in the editor.
+   * Trigger will execute when the Object is in the center of the field of view against a threshold for a duration of gaze time. The user can change the duration of gaze and the threshold in the editor.
 
 
 
