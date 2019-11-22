@@ -1,4 +1,4 @@
-#Basic Documentation for Verb Collective v.98
+# Basic Documentation for Verb Collective v.98
 
 The Verb Collective is a toolkit designed to aid artists in exploring interactive media and to help non specialized instructors teach virtual and augmented reality.  It is designed to fit seamlessly into the interface of Unity, though it leverages some of the same structures of visual coding environments, it is intentionally designed without specialized interfaces. 
 
@@ -12,7 +12,7 @@ This toolkit was designed at Yale University with support from HP as part of the
 
 For a more in depth description of the core strategies that are possible please see the complete paper, included in this package as a PDF.
 
-##Primary Scripts:
+## Primary Scripts:
 
 ## Classes
 * Verb
@@ -20,7 +20,7 @@ The base class of all Verbs. Functions and variables to control the audio, activ
 * Trigger
 Adds the override function Conjugate to the Verb class. 
 
-##Verbs
+## Verbs
 Can be activated using a Trigger Verb or at the start of a scene. 
 * toApproach
  Object will approach a target position at a variable speed. The user can change target position and speed in the editor.
@@ -61,7 +61,7 @@ Object will teleport to a variable location with the option to return to a varia
 * toWait
 Object will be set to inactive for a duration of time. The user can change the duration of time in the editor. 
 
-##Trigger Verbs
+## Trigger Verbs
 Will activate a Verb when scenario is met. 
 * whenHit
 Trigger will execute once object interacts with another collider object. 
@@ -87,8 +87,8 @@ Trigger will execute when the Object is in the center of the field of view again
 
 
 
-###More Info:
+### More Info:
 http://blendedreality.yale.edu/
 
-###Customer Support Contact:
+### Customer Support Contact:
 verbcollectivecommunity@gmail.com
